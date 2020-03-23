@@ -2,6 +2,8 @@
 
 React rehab part 1 - Robot search engine
 
+![](images/robofriends.png)
+
 ## Getting Started
 
 Clone this repository (SSH)
