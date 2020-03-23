@@ -2,7 +2,7 @@
 
 React rehab part 1 - Robot search engine
 
-![](images/robofriends.png)
+![](images/readme.png)
 
 ## Getting Started
 
