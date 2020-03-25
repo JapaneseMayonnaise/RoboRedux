@@ -29,5 +29,6 @@ npm start
 
 ## Built With
 
-* [React](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+* [React](http://www.dropwizard.io/1.0.2/docs/) 
+* [Redux](https://redux.js.org/) 
 * [Tachyons](https://tachyons.io/) - Css toolkit
