@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/RoboRedux/static/css/main.4a21d5bc.chunk.css",
+    "main.js": "/RoboRedux/static/js/main.f684b6f4.chunk.js",
+    "main.js.map": "/RoboRedux/static/js/main.f684b6f4.chunk.js.map",
+    "runtime-main.js": "/RoboRedux/static/js/runtime-main.0732b1ea.js",
+    "runtime-main.js.map": "/RoboRedux/static/js/runtime-main.0732b1ea.js.map",
+    "static/css/2.3b6f1bda.chunk.css": "/RoboRedux/static/css/2.3b6f1bda.chunk.css",
+    "static/js/2.82cf09cf.chunk.js": "/RoboRedux/static/js/2.82cf09cf.chunk.js",
+    "static/js/2.82cf09cf.chunk.js.map": "/RoboRedux/static/js/2.82cf09cf.chunk.js.map",
+    "index.html": "/RoboRedux/index.html",
+    "precache-manifest.5f2a00e4dbf95bfaf1f465fb735bcc69.js": "/RoboRedux/precache-manifest.5f2a00e4dbf95bfaf1f465fb735bcc69.js",
+    "service-worker.js": "/RoboRedux/service-worker.js",
+    "static/css/2.3b6f1bda.chunk.css.map": "/RoboRedux/static/css/2.3b6f1bda.chunk.css.map",
+    "static/css/main.4a21d5bc.chunk.css.map": "/RoboRedux/static/css/main.4a21d5bc.chunk.css.map",
+    "static/js/2.82cf09cf.chunk.js.LICENSE.txt": "/RoboRedux/static/js/2.82cf09cf.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0732b1ea.js",
+    "static/css/2.3b6f1bda.chunk.css",
+    "static/js/2.82cf09cf.chunk.js",
+    "static/css/main.4a21d5bc.chunk.css",
+    "static/js/main.f684b6f4.chunk.js"
+  ]
+}
