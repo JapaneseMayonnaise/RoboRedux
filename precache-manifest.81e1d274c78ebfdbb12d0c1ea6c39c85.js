@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "dc83939db364cc4ee6f49b88b72dcb80",
+    "revision": "1e360ade0eb841f9d4c0fda3bad335ce",
     "url": "/RoboRedux/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/RoboRedux/static/css/2.3b6f1bda.chunk.css"
   },
   {
-    "revision": "a84460781eebb9ac669d",
+    "revision": "8021dd1a6a241b17c222",
     "url": "/RoboRedux/static/css/main.4a21d5bc.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/RoboRedux/static/js/2.82cf09cf.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a84460781eebb9ac669d",
-    "url": "/RoboRedux/static/js/main.f684b6f4.chunk.js"
+    "revision": "8021dd1a6a241b17c222",
+    "url": "/RoboRedux/static/js/main.baaa673e.chunk.js"
   },
   {
     "revision": "ec3ff17b8f7467978513",
