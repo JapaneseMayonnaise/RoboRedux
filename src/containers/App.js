@@ -28,22 +28,14 @@ const mapDispatchToProps = dispatch => {
 
 class App extends Component {
   componentDidMount() {   
-    // fetch('https://jsonplaceholder.typicode.com/users')
-    //   .then(response=> response.json())
-    //   .then(users => {this.setState({ robots: users})});
-
     this.props.onRequestRobots();
   } 
-
-  // onSearchChange = (event) => {
-  //   this.setState({ searchfield: event.target.value })
-  // }
 
   render() {
     const { searchField, onSearchChange, robots, isPending } = this.props;
 
     const filteredRobots = robots.filter(robot =>{
-      return robot.name.toLowerCase().includes(searchField.toLowerCase());
+      return robot.name.toLowerCase().startsWith(searchField.toLowerCase());
     });
 
     return isPending ?
@@ -51,7 +43,7 @@ class App extends Component {
       (
         <div className='tc'>
           <h1 className='f1'>RoboFriends</h1>
-          <SearchBox searchChange={onSearchChange}/>
+          <SearchBox searchChange={onSearchChange} />
           <Scroll>
             <CardList robots={filteredRobots} />
           </Scroll>
