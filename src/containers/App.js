@@ -1,61 +1,65 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from 'react';
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
-import ErrorBoundry from './ErrorBoundry';
 import './App.css';
 
-import { setSearchField, requestRobots } from '../actions'; 
+import { setSearchField, requestRobots } from '../actions';
+import { connect } from 'react-redux';
 
-const mapStateToProps = (state) => {
-    return {
-        searchField: state.searchRobots.searchField,
-        robots: state.requestRobots.robots,
-        isPending: state.requestRobots.isPending,
-        error: state.requestRobots.error
-    }
+const mapStateToProps = state => {
+  return {
+    searchField: state.searchRobots.searchField,
+    robots: state.requestRobots.robots,
+    isPending: state.requestRobots.isPending,
+    error: state.requestRobots.error
+  }
+} 
+
+// Dispatch: what triggers an action
+const mapDispatchToProps = dispatch => {
+  return {
+    // function onSearchChange "dispatches" what setSearchField returns, which is type and payload
+    // This is same as "function onSearchChange(event) {dispatch(setSearchField(event.target.value)}"
+    onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
+    onRequestRobots: () => dispatch(requestRobots())
+  }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
-        onRequestRobots: () => dispatch(requestRobots()) 
+class App extends Component {
+  componentDidMount() {   
+    // fetch('https://jsonplaceholder.typicode.com/users')
+    //   .then(response=> response.json())
+    //   .then(users => {this.setState({ robots: users})});
 
-    }
+    this.props.onRequestRobots();
+  } 
+
+  // onSearchChange = (event) => {
+  //   this.setState({ searchfield: event.target.value })
+  // }
+
+  render() {
+    const { searchField, onSearchChange, robots, isPending } = this.props;
+
+    const filteredRobots = robots.filter(robot =>{
+      return robot.name.toLowerCase().includes(searchField.toLowerCase());
+    });
+
+    return isPending ?
+      <h1>Loading</h1> :
+      (
+        <div className='tc'>
+          <h1 className='f1'>RoboFriends</h1>
+          <SearchBox searchChange={onSearchChange}/>
+          <Scroll>
+            <CardList robots={filteredRobots} />
+          </Scroll>
+        </div>
+      );
+  }
 }
 
-class App extends React.Component {
-
-    componentDidMount() {
-        this.props.onRequestRobots();
-    }
-
-    render() {
-        const { searchField, onSearchChange, robots, isPending} = this.props;
-
-        const filteredRobotList = robots.filter(robot => robot.name.toLowerCase().startsWith(searchField.toLowerCase()));
-        
-
-            return isPending ?
-            (
-                <div className='tc'>
-                    <h1 className='f1'>RoboFriends</h1>
-                    <p className="loading">Loading...</p>
-               </div>
-            ) :
-            (
-                <div className='tc'>
-                    <h1 className='f1'>RoboFriends</h1>
-                    <SearchBox onSearchChange={onSearchChange} />
-                    <Scroll>
-                        <ErrorBoundry>
-                            <CardList robots={filteredRobotList} />
-                        </ErrorBoundry>
-                    </Scroll>
-                </div>
-            )    
-    }
-}
-
+// mapStateToProps - subscribe any state changes to the Redux store
+// mapDispatchToProps - subscribe any new actions
 export default connect(mapStateToProps, mapDispatchToProps)(App);
